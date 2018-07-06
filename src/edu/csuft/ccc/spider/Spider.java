@@ -56,10 +56,12 @@ public class Spider implements Runnable{
 				film.id = Integer.parseInt(id);
 				String star = item.select(".rating_num").text();
 				film.star = Double.parseDouble(star);
+	
 				
 				
 //				System.out.println(film);
 				filmList.add(film);
+
 				}
 			
 			//保存到数据库
@@ -80,7 +82,7 @@ public class Spider implements Runnable{
 					mapper.update(f);
 				}
 				new ImgDownload(f.poster,f.id+"","C:\\Java\\eclipse\\eclipse-workspace\\Spider\\img").download();;
-				System.out.println(f.id+f.title+"存储成功");
+				
 			}
 
 
